@@ -38,7 +38,91 @@ heroes_by_faction = {
               'Fegan', 'Disciple']
 }
 
-print(heroes_by_faction.values())
+#Dictionary containing the fodder needs to build a 5 star hero (hero_A is the hero we are building up to E5)
+build_5_star = {
+    '3_star_same_faction': 4,
+    '4_star_same_faction': 6,
+    '4_star_hero_A': 2
+}
 
+#Dictionary containing the fodder needs to build a 6 star hero
+build_6_star = {
+    '5_star_same_faction': 4,
+    '5_star_hero_A': 2
+}
+
+#Dictionary containing the fodder needs to build a 7 star hero
+build_7_star = {
+    '5_star_same_faction': 4
+}
+
+#Dictionary containing the fodder needs to build a 8 star hero
+build_8_star = {
+    '5_star_same_faction': 3,
+    '6_star_same_faction': 1,
+}
+
+#Dictionary containing the fodder needs to build a 9 star hero
+build_9_star = {
+    '5_star_same_faction': 2,
+    '5_star_hero_A': 1,
+    '6_star_same_faction': 1
+}
+
+#Dictionary containing the fodder needs to build a 10 star hero
+build_10_star = {
+    '5_star_hero_A': 2,
+    '6_star_same_faction': 1,
+    '9_star_any_faction': 1
+}
+
+#Dictionary containing the fodder needs to build an E1
+build_E1 = {
+    '5_star_hero_A': 1,
+    '9_star_any_faction': 1
+}
+
+#Dictionary containing the fodder needs to build an E2
+build_E2 = {
+    '5_star_hero_A': 1,
+    '9_star_any_faction': 1
+}
+
+#Dictionary containing the fodder needs to build an E3
+build_E3 = {
+     '10_star_any_faction': 1
+}
+
+#Dictionary containing the fodder needs to build an E4
+build_E4 = {
+    '5_star_hero_A': 1,
+    '10_star_any_faction': 1
+}
+
+#Dictionary containing the fodder needs to build an E5
+build_E5 = {
+    '5_star_hero_A': 1,
+    '10_star_any_faction': 1
+}
+
+
+
+
+
+
+
+'''
 hero_A = input('Which hero do you want to build? ')
 
+#Number of heroes available in 3 star shards
+hero_shard_3 = input('How many heroes in 3 star shards? ')
+print('3 star:', hero_shard_3)
+
+#Number of heroes available in 4 star shards
+hero_shard_4 = input('How many heroes in 4 star shards? ')
+print('4 star:', hero_shard_4)
+
+#Number of heroes available in 5 star shards
+hero_shard_5 = input('How many heroes in 5 star shards? ')
+print('5 star:', hero_shard_5)
+'''
