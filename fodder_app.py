@@ -38,6 +38,75 @@ heroes_by_faction = {
               'Fegan', 'Disciple']
 }
 
+
+#List of tuples containing the fodder needs to build a 5 star hero (hero_A is the hero we are building up to E5)
+build_5_star = [('3_star_same_faction', 4), ('4_star_same_faction', 6), ('4_star_hero_A', 2)]
+
+#List of tuplescontaining the fodder needs to build a 6 star hero
+build_6_star = [('5_star_same_faction', 4), ('5_star_hero_A', 2)]
+
+#List of tuples containing the fodder needs to build a 7 star hero
+build_7_star = [('5_star_same_faction', 4)]
+
+#List of tuples containing the fodder needs to build a 8 star hero
+build_8_star = [('5_star_same_faction', 3), ('6_star_same_faction', 1)]
+
+#List of tuples containing the fodder needs to build a 9 star hero
+build_9_star = [('5_star_same_faction', 2), ('5_star_hero_A', 1), ('6_star_same_faction', 1)]
+
+#List of tuples containing the fodder needs to build a 10 star hero
+build_10_star = [('5_star_hero_A', 2), ('6_star_same_faction', 1), ('9_star_any_faction', 1)]
+
+#List of tuples containing the fodder needs to build an E1
+build_E1 = [('5_star_hero_A', 1), ('9_star_any_faction', 1)]
+
+#List of tuples containing the fodder needs to build an E2
+build_E2 = [('5_star_hero_A', 1), ('9_star_any_faction', 1)]
+
+#List of tuples containing the fodder needs to build an E3
+build_E3 = [('10_star_any_faction', 1)]
+
+#List of tuples containing the fodder needs to build an E4
+build_E4 = [('5_star_hero_A', 1), ('10_star_any_faction', 1)]
+
+#List of tuples containing the fodder needs to build an E5
+build_E5 = [('5_star_hero_A', 1), ('10_star_any_faction', 1)]
+
+total_build = [build_5_star, build_6_star, build_7_star, build_8_star, build_9_star, build_10_star, 
+            build_E1, build_E2, build_E3, build_E4, build_E5]
+
+#Fodder needs to build an E5 (not counting the needs of "fodders of fodders")
+totals = {}
+for t in total_build:
+  for key, value in t:
+    totals[key] = totals.get(key, 0) + value
+
+'''
+{'10_star_any_faction': 3,
+ '3_star_same_faction': 4,
+ '4_star_hero_A': 2,
+ '4_star_same_faction': 6,
+ '5_star_hero_A': 9,
+ '5_star_same_faction': 13,
+ '6_star_same_faction': 3,
+ '9_star_any_faction': 3}
+ '''
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+Probably won't use it. Trying to do the same thing but, instead of dicts, I will try with tuples.
+
 #Dictionary containing the fodder needs to build a 5 star hero (hero_A is the hero we are building up to E5)
 build_5_star = {
     '3_star_same_faction': 4,
@@ -105,8 +174,13 @@ build_E5 = {
     '10_star_any_faction': 1
 }
 
+'''
 
+#total_build = [build_5_star, build_6_star, build_7_star, build_8_star, build_9_star, build_10_star, 
+#                build_E1, build_E2, build_E3, build_E4, build_E5]
+print(total_build[0]['4_star_hero_A'])
 
+for i, j in
 
 
 
