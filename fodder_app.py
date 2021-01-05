@@ -18,6 +18,9 @@ hero_5_stars = ['Lamb', 'Bone General', 'Nightmare Knight', 'Gbagbo', 'Grumpy Co
                 'Time Mage', 'Immolatus', 'Lemegeton', 'Akasha', 'Tanner', 'Rogge', 'Kargath', 'Headstriker', 'Ent Elder', 'Chief',
                 'Wind Walker', 'Logan', 'Darkness Fanella', 'Fegan', 'Disciple']
 
+#List of heroes that can be fused to 5 stars from 4 stars heroes (no heroes that go 10 stars and beyond can be fused from 4 stars)
+hero_5_star_fused = hero_9_stars + hero_5_stars
+
 #Dictionary of lists containing all 5 star heroes divided by faction
 heroes_by_faction = {
     'Shadow': ['Tix', 'Ithaqua', 'Gustin', 'Horus', 'Jahra', 'Kamath', 'Corpsedemon', 'Blood Blade', 'Walter', 
@@ -37,6 +40,81 @@ heroes_by_faction = {
     'Light': ['Russell', 'Tara', 'Aida', 'Belrain', 'Faith Blade', 'Michelle', 'Asmodel', 'Gerke', 'Divine Spirit',
               'Fegan', 'Disciple']
 }
+
+
+#Fodder needs to build a hero
+hero = 'Thale' #later wll be user input
+stars_start = '4' #which shards the user will start upgrading from - later wll be user input
+stars_end = '5' #upgrade the hero until - later wll be user input
+
+
+#Staring from 4 stars
+if stars_start == '4':
+    if hero not in hero_5_star_fused:
+        print("This hero doesn't have a 4 star form") #later return 1 and print an error message
+    else:
+        if (hero in hero_5_stars) and (hero not in hero_9_stars):
+            print('You can build this hero only up to 5 stars')
+        else:
+            print('You can build this hero only up to 9 stars')
+
+    #Up to 5 stars
+    if stars_end == '5':
+        #Define hero faction - maybe it has to be a function
+        for faction in heroes_by_faction.keys():
+            if hero in heroes_by_faction[faction]:
+                fac = faction
+                print(faction)
+    
+    #Up to 6 stars
+    
+      
+    #Show necessary fodder
+    print('To build a ' + stars_end + ' star ' + hero + ' from ' + stars_start + ' star shards, you need:')
+    print('* 4 x 3 star ' + fac)
+    print('* 6 x 4 star ' + fac)
+    print('* 2 x 4 star ' + hero)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #List of tuples containing the fodder needs to build a 5 star hero (hero_A is the hero we are building up to E5)
@@ -178,11 +256,6 @@ build_E5 = {
 
 #total_build = [build_5_star, build_6_star, build_7_star, build_8_star, build_9_star, build_10_star, 
 #                build_E1, build_E2, build_E3, build_E4, build_E5]
-print(total_build[0]['4_star_hero_A'])
-
-for i, j in
-
-
 
 
 '''
