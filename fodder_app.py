@@ -177,9 +177,77 @@ if stars_start == '5':
                 '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac +
                 '\n\n***From 9 to 10***\n* 2 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 1 x 9 star (any faction)')
 
+    # #Up to E1
+    if stars_end == 'E1':
+        #Define hero faction
+        fac = find_faction(hero)
+        message = ('***TOTAL***\n* 13 x 5 star ' + fac + '\n* 6 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 2 x 9 star (any faction)\n***TOTAL***' + 
+                '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
+                '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac +
+                '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 9 to 10***\n* 2 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From 10 to E1***\n* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)')
+
+    # #Up to E2
+    if stars_end == 'E2':
+        #Define hero faction
+        fac = find_faction(hero)
+        message = ('***TOTAL***\n* 13 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n***TOTAL***' + 
+                '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
+                '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac +
+                '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 9 to 10***\n* 2 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From 10 to E1***\n* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From E1 to E2***\n* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)')
+
+    # #Up to E3
+    if stars_end == 'E3':
+        #Define hero faction
+        fac = find_faction(hero)
+        message = ('***TOTAL***\n* 13 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 1 x 10 star (any faction)\n***TOTAL***' + 
+                '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
+                '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac +
+                '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 9 to 10***\n* 2 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From 10 to E1***\n* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From E1 to E2***\n* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From E2 to E3***\n* 1 x 10 star (any faction)')
+
+    # #Up to E4
+    if stars_end == 'E4':
+        #Define hero faction
+        fac = find_faction(hero)
+        message = ('***TOTAL***\n* 13 x 5 star ' + fac + '\n* 8 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 2 x 10 star (any faction)\n***TOTAL***' + 
+                '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
+                '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac +
+                '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 9 to 10***\n* 2 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From 10 to E1***\n* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From E1 to E2***\n* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From E2 to E3***\n* 1 x 10 star (any faction)' +
+                '\n\n***From E3 to E4***\n* 1 x 5 star ' + hero + '\n* 1 x 10 star (any faction)')
+
+    # #Up to E5
+    if stars_end == 'E5':
+        #Define hero faction
+        fac = find_faction(hero)
+        message = ('***TOTAL***\n* 13 x 5 star ' + fac + '\n* 9 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 3 x 10 star (any faction)\n***TOTAL***' + 
+                '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
+                '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac +
+                '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 9 to 10***\n* 2 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From 10 to E1***\n* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From E1 to E2***\n* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)' + 
+                '\n\n***From E2 to E3***\n* 1 x 10 star (any faction)' +
+                '\n\n***From E3 to E4***\n* 1 x 5 star ' + hero + '\n* 1 x 10 star (any faction)' + 
+                '\n\n***From E4 to E5***\n* 1 x 5 star ' + hero + '\n* 1 x 10 star (any faction)')
 
 
-      
 
     
 #Show necessary fodder
@@ -189,35 +257,6 @@ print(message)
 
 
 '''***FODDER NEEDS T0 BUILD A HERO***'''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
