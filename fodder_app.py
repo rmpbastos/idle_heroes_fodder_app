@@ -61,7 +61,7 @@ def find_faction(hero):
 
 #Fodder needs to build a hero
 hero = 'Sigmund' #later wll be user input
-stars_start = '4' #which shards the user will start upgrading from - later wll be user input
+stars_start = '5' #which shards the user will start upgrading from - later wll be user input
 stars_end = '10' #upgrade the hero until - later wll be user input
 
 
@@ -123,7 +123,6 @@ if stars_start == '4':
 
 
 
-'''
 #Starting from 5 stars
 if stars_start == '5':
     if hero in hero_5_stars:
@@ -136,32 +135,47 @@ if stars_start == '5':
 
     #Up to 6 stars
     if stars_end == '6':
+        #Define hero faction
         fac = find_faction(hero)
-        message = ('* 4 x 3 star ' + fac + '\n* 6 x 4 star ' + fac + '\n* 2 x 4 star ' + hero)
-'''
+        message = ('* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero)
 
+    #Up to 7 stars
+    if stars_end == '7':
+        #Define hero faction
+        fac = find_faction(hero)
+        message = ('***TOTAL***\n* 8 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + '\n***TOTAL***' + 
+                '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
+                '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac)
 
+    #Up to 8 stars
+    if stars_end == '8':
+        #Define hero faction
+        fac = find_faction(hero)
+        message = ('***TOTAL***\n* 11 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n***TOTAL***' + 
+                '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
+                '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac +
+                '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac)
 
+    #Up to 9 stars
+    if stars_end == '9':
+        #Define hero faction
+        fac = find_faction(hero)
+        message = ('***TOTAL***\n* 13 x 5 star ' + fac + '\n* 3 x 5 star ' + hero + '\n* 2 x 6 star ' + fac + '\n***TOTAL***' + 
+                '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
+                '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac +
+                '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac)
 
-
-
-
-
-    # #(no heroes that go 10 stars and beyond can be fused from 4 stars)
     # #Up to 10 stars
-    # if stars_end == '10':
-        # #Define hero faction - maybe it has to be a function
-        # for faction in heroes_by_faction.keys():
-            # if hero in heroes_by_faction[faction]:
-                # fac = faction
-        # message = ('***TOTAL***\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero +
-                # '\n* 13 x 5 star ' + fac + '\n* 3 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 1 x 9 star (any faction)\n***TOTAL***' +
-                # '\n\n***From 4 to 5*** (Here we need to build 2 x 5 star copies of the desired hero)\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero + 
-                # '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + 
-                # '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac + 
-                # '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac + 
-                # '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + 
-                # '\n\n***From 9 to 10***\n* 2 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 1 x 9 star (any faction)')
+    if stars_end == '10':
+        #Define hero faction
+        fac = find_faction(hero)
+        message = ('***TOTAL***\n* 13 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 1 x 9 star (any faction)\n***TOTAL***' + 
+                '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
+                '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac +
+                '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac +
+                '\n\n***From 9 to 10***\n* 2 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 1 x 9 star (any faction)')
 
 
 
