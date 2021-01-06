@@ -57,13 +57,37 @@ def find_faction(hero):
 
 '''***FODDER NEEDS T0 BUILD A HERO***'''
 
-#*****Ajustar os TOTAIS para levar em consideração o custo dos 6 stars, 9 stars e 10 stars adicionais*****
-
 #Fodder needs to build a hero
 hero = 'Sigmund' #later wll be user input
-stars_start = '' #which shards the user will start upgrading from - later wll be user input
-stars_end = '' #upgrade the hero until - later wll be user input
+stars_start = '5' #which shards the user will start upgrading from - later wll be user input
+stars_end = '6' #upgrade the hero until - later wll be user input
+initial_3star = 3200 #number of 3 star in shards owned - later will be user input
+initial_4star = 3600 #number of 4 star in shards owned - later will be user input
+initial_5star = 125 #number of 5 star in shards owned - later will be user input
 
+print('**********')
+print('You can build ' + str(initial_4star // 8) + ' x 5 star heroes with ' + str(initial_4star) + ' shards.')
+print('You can have ' + str((initial_4star // 8) + initial_5star) + ' x 5 star heroes.')
+print('**********')
+
+
+
+'''
+TODO
+ask how many heroes the user have in shards (3*, 4*, 5*)
+show how many 5 star hero the user can build with that amount of shard heroes
+from the result of the "start / end", extract the number of heroes needed and subtract from the available heroes
+
+add the amount of gold and spirit needed for the upgrade
+
+later, build a calculator like the TABLE C.2
+'''
+
+'''
+the fodder_needs variable will have the following tuple structure:
+starting at 5 star:
+('5 star same fac', n, '5 star hero', n, '5 star any fac', n)
+'''
 
 #Staring from 4 stars
 if stars_start == '4':
@@ -125,8 +149,6 @@ if stars_start == '4':
                 '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac + 
                 '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac)
 
-
-
 #Starting from 5 stars
 if stars_start == '5':
     if hero in hero_5_stars:
@@ -141,12 +163,14 @@ if stars_start == '5':
     if stars_end == '6':
         #Define hero faction
         fac = find_faction(hero)
+        fodder_needs = (4, 2, 0)
         message = ('* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero)
 
     #Up to 7 stars
     if stars_end == '7':
         #Define hero faction
         fac = find_faction(hero)
+        fodder_needs = (8, 2, 0)
         message = ('***TOTAL***\n* 8 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + '\n***TOTAL***' + 
                 '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
                 '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac)
@@ -155,6 +179,7 @@ if stars_start == '5':
     if stars_end == '8':
         #Define hero faction
         fac = find_faction(hero)
+        fodder_needs = (17, 2, 0)
         message = ('* 11 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + '\n* 1 x 6 star ' + fac +
                 '\n\n***TOTAL****\n* 17 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + '\n***TOTAL***' +  
                 '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
@@ -165,6 +190,7 @@ if stars_start == '5':
     if stars_end == '9':
         #Define hero faction
         fac = find_faction(hero)
+        fodder_needs = (25, 3, 0)
         message = ('* 13 x 5 star ' + fac + '\n* 3 x 5 star ' + hero + '\n* 2 x 6 star ' + fac +
                 '\n\n***TOTAL****\n* 25 x 5 star ' + fac + '\n* 3 x 5 star ' + hero + '\n***TOTAL***' +  
                 '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
@@ -176,6 +202,7 @@ if stars_start == '5':
     if stars_end == '10':
         #Define hero faction
         fac = find_faction(hero)
+        fodder_needs = (31, 5, 28)
         message = ('* 13 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 1 x 9 star (any faction)' + 
                 '\n\n***TOTAL****\n* 31 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 28 x 5 star (any faction)\n***TOTAL***' +
                 '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
@@ -188,6 +215,7 @@ if stars_start == '5':
     if stars_end == 'E1':
         #Define hero faction
         fac = find_faction(hero)
+        fodder_needs = (31, 6, 56)
         message = ('* 13 x 5 star ' + fac + '\n* 6 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 2 x 9 star (any faction)' + 
                 '\n\n***TOTAL****\n* 31 x 5 star ' + fac + '\n* 6 x 5 star ' + hero + '\n* 56 x 5 star (any faction)\n***TOTAL***' +
                 '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
@@ -201,6 +229,7 @@ if stars_start == '5':
     if stars_end == 'E2':
         #Define hero faction
         fac = find_faction(hero)
+        fodder_needs = (31, 7, 84)
         message = ('* 13 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)' + 
                 '\n\n***TOTAL****\n* 31 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 84 x 5 star (any faction)\n***TOTAL***' +
                 '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
@@ -215,6 +244,7 @@ if stars_start == '5':
     if stars_end == 'E3':
         #Define hero faction
         fac = find_faction(hero)
+        fodder_needs = (31, 7, 148)
         message = ('* 13 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 1 x 10 star (any faction)' + 
                 '\n\n***TOTAL****\n* 31 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 148 x 5 star (any faction)\n***TOTAL***' +
                 '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
@@ -230,6 +260,7 @@ if stars_start == '5':
     if stars_end == 'E4':
         #Define hero faction
         fac = find_faction(hero)
+        fodder_needs = (31, 8, 212)
         message = ('* 13 x 5 star ' + fac + '\n* 8 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 2 x 10 star (any faction)' + 
                 '\n\n***TOTAL****\n* 31 x 5 star ' + fac + '\n* 8 x 5 star ' + hero + '\n* 212 x 5 star (any faction)\n***TOTAL***' +
                 '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
@@ -246,6 +277,7 @@ if stars_start == '5':
     if stars_end == 'E5':
         #Define hero faction
         fac = find_faction(hero)
+        fodder_needs = (31, 9, 276)
         message = ('* 13 x 5 star ' + fac + '\n* 9 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 3 x 10 star (any faction)' + 
                 '\n\n***TOTAL****\n* 31 x 5 star ' + fac + '\n* 9 x 5 star ' + hero + '\n* 276 x 5 star (any faction)\n***TOTAL***' +
                 '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + 
@@ -802,19 +834,6 @@ if stars_start == 'E3':
                 '\n\n***From E3 to E4***\n* 1 x 5 star ' + hero + '\n* 1 x 10 star (any faction)' +
                 '\n\n***From E4 to E5***\n* 1 x 5 star ' + hero + '\n* 1 x 10 star (any faction)')
 
-
-
-
-'''DELETE THIS CODE BELOW'''
-hero = 'Sigmund' #later wll be user input
-stars_start = 'E4' #which shards the user will start upgrading from - later wll be user input
-stars_end = 'E5' #upgrade the hero until - later wll be user input
-'''DELETE THIS CODE ABOVE'''
-
-
-
-
-
 #Starting from E4
 if stars_start == 'E4':
     if hero in hero_5_stars:
@@ -832,18 +851,21 @@ if stars_start == 'E4':
         message = ('* 1 x 5 star ' + hero + '\n* 1 x 10 star (any faction)' + 
                 '\n\n***TOTAL\n* 1 x 5 star ' + hero + '\n* 64 x 5 star (any faction)\n***TOTAL***')
 
+#amount of 4 and 5 star heroes used in the upgrade
+used_5star = (sum(fodder_needs))
+used_4star = (used_5star* 8)
 
-
-
-
-
-
-
-
-
-
+#remaining 4 and 5 star heroes after the upgrade
+remaining_5star = (initial_5star - used_5star)
+remaining_4star = (initial_4star - used_4star)
 
 #Show necessary fodder
+print(fodder_needs[0])
+print(fodder_needs[1])
+print(fodder_needs[2])
+print(sum(fodder_needs))
+
+
 print('To build a ' + stars_end + ' star ' + hero + ' from ' + stars_start + ' star shards, you need:')
 print(message)
     
