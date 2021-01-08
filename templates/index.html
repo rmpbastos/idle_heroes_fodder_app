@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calculate you fodder needs!
+{% endblock %}
+
+{% block main %}
+<form action="/" method="post">
+    <h1>Please fill in the form:</h1>
+    <br>
+    <div class="form-group">
+        <h5>Please select a hero:</h5>
+        <input autocomplete="off" autofocus class="form-control" name="hero" placeholder="Ex: Sigmund" type="text">
+    </div>
+    <div class="form-group">
+        <h5>Starting level:</h5>
+        <select class="form-control" name="stars_start" required>
+            <option value="4">4 stars</option>
+            <option value="5">5 stars</option>
+            <option value="6">6 stars</option>
+            <option value="7">7 stars</option>
+            <option value="8">8 stars</option>
+            <option value="9">9 stars</option>
+            <option value="10">10 stars</option>
+            <option value="E1">E1</option>
+            <option value="E2">E2</option>
+            <option value="E3">E3</option>
+            <option value="E4">E4</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <h5>Upgrade to:</h5>
+        <select class="form-control" name="stars_end" required>
+            <option value="5">5 stars</option>
+            <option value="6">6 stars</option>
+            <option value="7">7 stars</option>
+            <option value="8">8 stars</option>
+            <option value="9">9 stars</option>
+            <option value="10">10 stars</option>
+            <option value="E1">E1</option>
+            <option value="E2">E2</option>
+            <option value="E3">E3</option>
+            <option value="E4">E4</option>
+            <option value="E5">E5</option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <h5>Age:</h5>
+        <input autocomplete="off" autofocus class="form-control" name="age" placeholder="20" type="number" min="0">
+    </div>
+    <button class="btn btn-secondary" type="submit">Calculate</button>
+</form>
+{% endblock %}

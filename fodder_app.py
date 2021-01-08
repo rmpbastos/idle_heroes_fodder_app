@@ -1,3 +1,4 @@
+from flask import Flask, render_template
 from backing import find_faction
 from backing_data import hero_10_stars, hero_9_stars, hero_5_stars, hero_5_star_fused, heroes_by_faction
 

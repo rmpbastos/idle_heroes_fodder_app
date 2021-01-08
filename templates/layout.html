@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
         <!-- https://favicon.io/emoji-favicons/money-mouth-face/ -->
-        <link href="/static/dumbbell-solid.svg" rel="icon">
+        <link href="/static/trophy-solid.svg" rel="icon">
 
         <link href="/static/styles.css" rel="stylesheet">
         
@@ -30,12 +30,11 @@
     <body>
 
         <nav class="navbar navbar-expand-md navbar-light bg-light border">
-            <a class="navbar-brand" href="/"><span class="grey"><i class="fas fa-dumbbell"></i> Health Tracker</span></a>
+            <a class="navbar-brand" href="/"><span class="grey"><i class="fas fa-trophy"></i> Idle Heroes Calculator</span></a>
             <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar">
-                {% if session.user_id %}
                     <ul class="navbar-nav mr-auto mt-2">
                         <li class="nav-item" id="track"><a class="nav-link" href="/track"><i class="fas fa-weight"></i> Track your health!</a></li>
                         <li class="nav-item"><a class="nav-link" href="/"><i class="far fa-user"></i> Profile</a></li>
@@ -44,12 +43,6 @@
                     <ul class="navbar-nav ml-auto mt-2">
                         <li class="nav-item"><a class="nav-link" href="/logout">Log Out <i class="fas fa-sign-out-alt"></i></a></li>
                     </ul>
-                {% else %}
-                    <ul class="navbar-nav ml-auto mt-2">
-                        <li class="nav-item"><a class="nav-link" href="/register">Register <i class="fas fa-user-plus"></i></a></li>
-                        <li class="nav-item"><a class="nav-link" href="/login">Log In <i class="fas fa-user"></i></a></li>
-                    </ul>
-                {% endif %}
             </div>
         </nav>
         {% if get_flashed_messages() %}
