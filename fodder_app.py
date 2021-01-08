@@ -5,9 +5,9 @@ from backing_data import hero_10_stars, hero_9_stars, hero_5_stars, hero_5_star_
 '''***FODDER NEEDS T0 BUILD A HERO***'''
 
 #Fodder needs to build a hero
-hero = 'Glen' #later wll be user input
+hero = 'Sigmund' #later wll be user input
 stars_start = '5' #which shards the user will start upgrading from - later wll be user input
-stars_end = '9' #upgrade the hero until - later wll be user input
+stars_end = '8' #upgrade the hero until - later wll be user input
 #initial_3star = 3200 #number of 3 star in shards owned - later will be user input
 initial_4star = 3600 #number of 4 star in shards owned - later will be user input
 initial_5star = 125 #number of 5 star in shards owned - later will be user input
@@ -22,12 +22,12 @@ print('**********')
 #Staring from 4 stars
 if stars_start == '4':
     if hero not in hero_5_star_fused:
-        print("This hero doesn't have a 4 star form") #later return 1 and print an error message / maybe add a break point here
+        print("This hero doesn't have a 4 star form.") #later return 1 and print an error message / maybe add a break point here
     else:
         if (hero in hero_5_stars) and (hero not in hero_9_stars):
-            print('You can build this hero only up to 5 stars')
+            print('You can build this hero only up to 5 stars.')
         else:
-            print('You can build this hero only up to 9 stars')
+            print('You can build this hero only up to 9 stars.')
 
         print('\nTo build a ' + stars_end + ' star ' + hero + ' from ' + stars_start + ' star shards, you need:')
         #Up to 5 stars
