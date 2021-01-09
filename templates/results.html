@@ -6,7 +6,14 @@
 
 {% block main %}
 <h1>Your hero is:</h1>
-<h2>{{  hero  }}</h2>
-<h2>Starting level: {{  stars_start  }}</h2>
-<h2>Upgrade to: {{  stars_end  }}</h2>
+<h2>{{ hero }}</h2>
+<h2>Starting level: {{ stars_start }}</h2>
+<h2>Upgrade to: {{ stars_end }}</h2>
+<h2>Initial 4 stars: {{ initial_4star }}</h2>
+<h2>Initial 5 stars: {{ initial_5star }}</h2>
+<br>
+{% if parcial_available and total_available %}
+<p>You can build {{ parcial_available }} x 5 star heroes with {{ initial_4star }} shards.</p>
+<p>You can have a total of {{ total_available }} x 5 star heroes.</p>
+{% endif %}
 {% endblock %}
