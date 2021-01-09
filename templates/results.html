@@ -5,15 +5,44 @@
 {% endblock %}
 
 {% block main %}
-<h1>Your hero is:</h1>
-<h2>{{ hero }}</h2>
+<div class="alert alert-warning" role="alert">
+    <p>{{ message_warning }}</p> 
+</div>
+
+{% if initial_4star and initial_5star %}
+    <h2>Initial 4 stars: {{ initial_4star }}</h2>
+    <h2>Initial 5 stars: {{ initial_5star }}</h2>
+    <br>
+    <p>You can build {{ parcial_available }} x 5 star heroes with {{ initial_4star }} shards.</p>
+    <p>You can have a total of {{ total_available }} x 5 star heroes.</p>
+{% endif %}
+
+{% if message_build != False %}
+<h1>{{ message_build }}</h1> 
+{% endif %}
+
+<br>
+{% for para in message_food %}
+    <p>{{ para }}</p>
+{% endfor %}
+<br>
+
+<h2>Used 5 star: {{ used_5star }}</h2>
+<h2>Used 4 star: {{ used_4star }}</h2>
+<h2>Remaining 5 star: {{ remaining_5star }}</h2>
+<h2>Remaining 4 star: {{ remaining_4star }}</h2>
+
+{% for para in message_food_used %}
+    <p>{{ para }}</p>
+{% endfor %}
+
+<br>
+
+{% for para in message_food_available %}
+    <p>{{ para }}</p>
+{% endfor %}
+
+<h2>Your hero is: {{ hero }}</h2>
 <h2>Starting level: {{ stars_start }}</h2>
 <h2>Upgrade to: {{ stars_end }}</h2>
-<h2>Initial 4 stars: {{ initial_4star }}</h2>
-<h2>Initial 5 stars: {{ initial_5star }}</h2>
-<br>
-{% if parcial_available and total_available %}
-<p>You can build {{ parcial_available }} x 5 star heroes with {{ initial_4star }} shards.</p>
-<p>You can have a total of {{ total_available }} x 5 star heroes.</p>
-{% endif %}
 {% endblock %}

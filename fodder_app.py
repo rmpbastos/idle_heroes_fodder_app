@@ -8,7 +8,7 @@ from backing_data import hero_10_stars, hero_9_stars, hero_5_stars, hero_5_star_
 #Fodder needs to build a hero
 hero = 'Sigmund' #later wll be user input
 stars_start = '5' #which shards the user will start upgrading from - later wll be user input
-stars_end = '8' #upgrade the hero until - later wll be user input
+stars_end = '6' #upgrade the hero until - later wll be user input
 #initial_3star = 3200 #number of 3 star in shards owned - later will be user input
 initial_4star = 3600 #number of 4 star in shards owned - later will be user input
 initial_5star = 125 #number of 5 star in shards owned - later will be user input
@@ -23,77 +23,63 @@ print('**********')
 fodder_needs1 = (0, 0, 0)
 
 
-def start_4():
-    #Staring from 4 stars
-    if stars_start == '4':
-        if hero not in hero_5_star_fused:
-            print("This hero doesn't have a 4 star form.") #later return 1 and print an error message / maybe add a break point here
+
+#Staring from 4 stars
+if stars_start == '4':
+    if hero not in hero_5_star_fused:
+        print("This hero doesn't have a 4 star form.") #later return 1 and print an error message / maybe add a break point here
+    else:
+        if (hero in hero_5_stars) and (hero not in hero_9_stars):
+            print('You can build this hero only up to 5 stars.')
         else:
-            if (hero in hero_5_stars) and (hero not in hero_9_stars):
-                print('You can build this hero only up to 5 stars.')
-            else:
-                print('You can build this hero only up to 9 stars.')
-
-            print('\nTo build a ' + stars_end + ' star ' + hero + ' from ' + stars_start + ' star shards, you need:')
-            #Up to 5 stars
-            if stars_end == '5':
-                #Define hero faction
-                fac = find_faction(hero)
-                message = ('* 4 x 3 star ' + fac + '\n* 6 x 4 star ' + fac + '\n* 2 x 4 star ' + hero)
-
-            #Up to 6 stars
-            if stars_end == '6':
-                #Define hero faction
-                fac = find_faction(hero)
-                message = ('***From 4 to 5*** (Here we need to build 2 x 5 star copies of the desired hero)\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero + 
-                        '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac)
-
-            #Up to 7 stars
-            if stars_end == '7':
-                #Define hero faction
-                fac = find_faction(hero)
-                message = ('***TOTAL***\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero +
-                        '\n* 8 x 5 star ' + fac + '\n***TOTAL***' +
-                        '\n\n***From 4 to 5*** (Here we need to build 2 x 5 star copies of the desired hero)\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero + 
-                        '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + 
-                        '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac)
-
-            #Up to 8 stars
-            if stars_end == '8':
-                #Define hero faction
-                fac = find_faction(hero)
-                message = ('* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero +
-                        '\n* 11 x 5 star ' + fac + '\n* 1 x 6 star ' + fac +
-                        '\n\n***TOTAL***\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero +
-                        '\n* 17 x 5 star ' + fac + '\n***TOTAL***' +
-                        '\n\n***From 4 to 5*** (Here we need to build 2 x 5 star copies of the desired hero)\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero + 
-                        '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + 
-                        '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac + 
-                        '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac)
-
-            #Up to 9 stars
-            if stars_end == '9':
-                #Define hero faction
-                fac = find_faction(hero)
-                message = ('* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero +
-                        '\n* 13 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 2 x 6 star ' + fac + 
-                        '\n\n***TOTAL***\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero +
-                        '\n* 19 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n***TOTAL***' + 
-                        '\n\nFrom 4 to 5*** (Here we need to build 2 x 5 star copies of the desired hero)\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero + 
-                        '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + 
-                        '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac + 
-                        '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac + 
-                        '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac)
-
-            print(message)
-
-
-"""
-Figure out how to put all "ifs" below inside functions, like the function above, "start_4"
-Figure out the problem of "fooder_needs". How to use it outside the function
-"""
-
-
+            print('You can build this hero only up to 9 stars.')
+        print('\nTo build a ' + stars_end + ' star ' + hero + ' from ' + stars_start + ' star shards, you need:')
+        #Up to 5 stars
+        if stars_end == '5':
+            #Define hero faction
+            fac = find_faction(hero)
+            message = ('* 4 x 3 star ' + fac + '\n* 6 x 4 star ' + fac + '\n* 2 x 4 star ' + hero)
+        #Up to 6 stars
+        if stars_end == '6':
+            #Define hero faction
+            fac = find_faction(hero)
+            message = ('***From 4 to 5*** (Here we need to build 2 x 5 star copies of the desired hero)\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero + 
+                    '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac)
+        #Up to 7 stars
+        if stars_end == '7':
+            #Define hero faction
+            fac = find_faction(hero)
+            message = ('***TOTAL***\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero +
+                    '\n* 8 x 5 star ' + fac + '\n***TOTAL***' +
+                    '\n\n***From 4 to 5*** (Here we need to build 2 x 5 star copies of the desired hero)\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero + 
+                    '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + 
+                    '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac)
+        #Up to 8 stars
+        if stars_end == '8':
+            #Define hero faction
+            fac = find_faction(hero)
+            message = ('* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero +
+                    '\n* 11 x 5 star ' + fac + '\n* 1 x 6 star ' + fac +
+                    '\n\n***TOTAL***\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero +
+                    '\n* 17 x 5 star ' + fac + '\n***TOTAL***' +
+                    '\n\n***From 4 to 5*** (Here we need to build 2 x 5 star copies of the desired hero)\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero + 
+                    '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + 
+                    '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac + 
+                    '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac)
+        #Up to 9 stars
+        if stars_end == '9':
+            #Define hero faction
+            fac = find_faction(hero)
+            message = ('* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero +
+                    '\n* 13 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 2 x 6 star ' + fac + 
+                    '\n\n***TOTAL***\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero +
+                    '\n* 19 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n***TOTAL***' + 
+                    '\n\nFrom 4 to 5*** (Here we need to build 2 x 5 star copies of the desired hero)\n* 8 x 3 star ' + fac + '\n* 12 x 4 star ' + fac + '\n* 4 x 4 star ' + hero + 
+                    '\n\n***From 5 to 6***\n* 4 x 5 star ' + fac + 
+                    '\n\n***From 6 to 7***\n* 4 x 5 star ' + fac + 
+                    '\n\n***From 7 to 8***\n* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac + 
+                    '\n\n***From 8 to 9***\n* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac)
+        print(message)
 
 #Starting from 5 stars
 if stars_start == '5':
@@ -228,7 +214,8 @@ if stars_start == '5':
                     '\n\n***From E3 to E4***\n* 1 x 5 star ' + hero + '\n* 1 x 10 star (any faction)' + 
                     '\n\n***From E4 to E5***\n* 1 x 5 star ' + hero + '\n* 1 x 10 star (any faction)')
         print(message)
-    
+   
+
 
 #Starting from 6 stars
 if stars_start == '6':
@@ -856,8 +843,6 @@ if stars_start == 'E4':
 
 
 
-fodder_needs2 = [sum(x) for x in zip(fodder_needs1,fodder_needs)]
-print(fodder_needs2)
 
 
 if (stars_start != '4') and (hero not in hero_5_stars):
