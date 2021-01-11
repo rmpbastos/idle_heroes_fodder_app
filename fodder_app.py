@@ -8,7 +8,7 @@ from backing_data import hero_10_stars, hero_9_stars, hero_5_stars, hero_5_star_
 #Fodder needs to build a hero
 hero = 'Sigmund' #later wll be user input
 stars_start = '5' #which shards the user will start upgrading from - later wll be user input
-stars_end = '6' #upgrade the hero until - later wll be user input
+stars_end = '7' #upgrade the hero until - later wll be user input
 #initial_3star = 3200 #number of 3 star in shards owned - later will be user input
 initial_4star = 3600 #number of 4 star in shards owned - later will be user input
 initial_5star = 125 #number of 5 star in shards owned - later will be user input

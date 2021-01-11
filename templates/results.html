@@ -21,11 +21,13 @@
 <h1>{{ message_build }}</h1> 
 {% endif %}
 
+{% if message_food %}
 <br>
 {% for para in message_food %}
     <p>{{ para }}</p>
 {% endfor %}
 <br>
+{% endif %}
 
 <h2>Used 5 star: {{ used_5star }}</h2>
 <h2>Used 4 star: {{ used_4star }}</h2>
