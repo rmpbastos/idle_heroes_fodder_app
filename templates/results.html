@@ -9,6 +9,39 @@
     <p>{{ message_warning }}</p> 
 </div>
 
+<div>
+    {% if initial_4star and initial_5star %}
+        <table class="a table table-bordered"> 
+            <thead>
+                <tr>
+                    <th class="center" colspan="2">You have in shards</th>
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td>4 star heroes</td>
+                    <td class="center">{{ initial_4star }}</td>
+                </tr>
+                <tr>
+                    <td>5 star heroes</td>
+                    <td class="center">{{ initial_5star }}</td>
+                </tr>
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+
+
+
+
+
+
+
+
+{% for para in message_food_total %}
+    <p>{{ para }}</p>
+{% endfor %}
+
 {% if initial_4star and initial_5star %}
     <h2>Initial 4 stars: {{ initial_4star }}</h2>
     <h2>Initial 5 stars: {{ initial_5star }}</h2>

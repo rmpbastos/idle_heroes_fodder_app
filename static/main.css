@@ -1,0 +1,18 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ECECEC;
+}
+
+table.a {
+    table-layout: fixed;
+    width: 300px;
+}
+
+th,td.center {
+    text-align: center;
+    vertical-align: middle;
+}
