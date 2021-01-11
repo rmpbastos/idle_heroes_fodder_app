@@ -9,27 +9,34 @@
     <p>{{ message_warning }}</p> 
 </div>
 
-<div>
-    {% if initial_4star and initial_5star %}
-        <table class="a table table-bordered"> 
-            <thead>
-                <tr>
-                    <th class="center" colspan="2">You have in shards</th>
-                </tr>                                
-            </thead>
-            <tbody>
-                <tr>
-                    <td>4 star heroes</td>
-                    <td class="center">{{ initial_4star }}</td>
-                </tr>
-                <tr>
-                    <td>5 star heroes</td>
-                    <td class="center">{{ initial_5star }}</td>
-                </tr>
-            </tbody>
-        </table>
-    {% endif %}
-</div>
+
+{% if initial_4star and initial_5star %}
+    <div class="flex-container">
+        <div class="flex-child left">
+            <table class="a table table-bordered"> 
+                <thead>
+                    <tr>
+                        <th class="center" colspan="2">You have in shards</th>
+                    </tr>                                
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4 star heroes</td>
+                        <td class="center">{{ initial_4star }}</td>
+                    </tr>
+                    <tr>
+                        <td>5 star heroes</td>
+                        <td class="center">{{ initial_5star }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="flex-child">
+            <h1>You can build {{ parcial_available }} x 5 star heroes with {{ initial_4star }} shards.</h1>
+            <h1>You can have a total of {{ total_available }} x 5 star heroes.</h1>
+        </div>
+    </div>
+{% endif %}
 
 
 

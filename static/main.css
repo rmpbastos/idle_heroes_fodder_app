@@ -7,12 +7,26 @@ body {
     background-color: #ECECEC;
 }
 
-table.a {
-    table-layout: fixed;
-    width: 300px;
-}
-
 th,td.center {
     text-align: center;
     vertical-align: middle;
+}
+
+table.a {
+    width: 60%;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    border: 2px solid yellow;
+}
+
+.flex-child.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
