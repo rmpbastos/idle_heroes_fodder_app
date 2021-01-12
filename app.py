@@ -37,9 +37,10 @@ def food():
         #if hero can't be upgraded beyond 5 stars
         if hero in hero_5_stars:
             message_warning = "This hero cannot be further upgraded."
-            message_food = set()
-            fodder_needs = set()
-            message_build = set()
+            message_food = ""
+            fodder_needs = ""
+            message_build = ""
+            message_food_total = ""
         else:
             #calculate food needs for each combination start/end
             if stars_start == '5':
@@ -176,7 +177,8 @@ def food():
                 parcial_available=parcial_available, total_available=total_available, message_warning=message_warning,
                 message_build=message_build, message_food=message_food, used_5star=used_5star, used_4star=used_4star,
                 remaining_5star=remaining_5star, remaining_4star=remaining_4star, message_food_used=message_food_used,
-                message_food_available=message_food_available, message_food_total=message_food_total)
+                message_food_available=message_food_available, message_food_total=message_food_total, 
+                hero_5_stars=hero_5_stars)
 
     #if user reached route via GET
     else:
