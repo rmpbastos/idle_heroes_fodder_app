@@ -43,6 +43,7 @@ def food():
             message_food_total = ""
         else:
             #calculate food needs for each combination start/end
+            #starting at 5 stars
             if stars_start == '5':
                 if (hero in hero_9_stars) and (hero not in hero_10_stars):
                     message_warning = "You can build this hero only up to 9 stars."
@@ -135,20 +136,486 @@ def food():
                     fodder_needs = (31, 9, 276)
                     message_food = ('* 13 x 5 star ' + fac + '\n* 9 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 3 x 10 star (any faction)')
                     message_food_total = ('***TOTAL****\n* 31 x 5 star ' + fac + '\n* 9 x 5 star ' + hero + '\n* 276 x 5 star (any faction)\n***TOTAL***')
+            
+            #starting at 6 stars
+            elif stars_start == '6':
+                if (hero in hero_9_stars) and (hero not in hero_10_stars):
+                    message_warning = "You can build this hero only up to 9 stars."
+                    if stars_end in ("10", "E1", "E2", "E3", "E4", "E5"):
+                        message_food = ""
+                        fodder_needs = ""
+                        message_build = ""
+                        message_food_total = ""
+                else:
+                    message_warning = "You can build this hero up to E5."
+                message_build = "To build a " + stars_end + " star " + hero + " from " + stars_start + " star shards, you need:" 
+
+                #Up to 7 stars
+                if stars_end == '7':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (4, 0, 0)
+                    message_food = ("* 4 x 5 star " + fac)
+                    message_food_total = message_food
+
+                #Up to 8 stars
+                if stars_end == '8':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (13, 0, 0)
+                    message_food = ('* 7 x 5 star ' + fac + '\n* 1 x 6 star ' + fac)
+                    message_food_total = ('***TOTAL***\n* 13 x 5 star ' + fac + '\n***TOTAL***')
 
 
-            #For now, show nothing for upgrades not starting at 5 stars
-            else:
-                message_food = ""
-                message_food_total = ""
-                message_food_total = ""
-                fodder_needs = ""
-                message_build = ""
-                message_warning = "TO BE DONE"
+                #Up to 9 stars
+                if stars_end == '9':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (21, 1, 0)
+                    message_food = ('* 9 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 2 x 6 star ' + fac)
+                    message_food_total = ('***TOTAL***\n* 21 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n***TOTAL***')
+
+                #Up to 10 stars
+                if stars_end == '10':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (27, 3, 28)
+                    message_food = ('* 9 x 5 star ' + fac + '\n* 3 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 1 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 27 x 5 star ' + fac + '\n* 3 x 5 star ' + hero + '\n* 28 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E1
+                if stars_end == 'E1':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (27, 4, 56)
+                    message_food = ('* 9 x 5 star ' + fac + '\n* 4 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 2 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 27 x 5 star ' + fac + '\n* 4 x 5 star ' + hero + '\n* 56 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E2
+                if stars_end == 'E2':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (27, 5, 84)
+                    message_food = ('* 9 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 27 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 84 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E3
+                if stars_end == 'E3':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (27, 5, 148)
+                    message_food = ('* 9 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 1 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 27 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 148 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E4
+                if stars_end == 'E4':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (27, 6, 212)
+                    message_food = ('* 9 x 5 star ' + fac + '\n* 6 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 2 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 27 x 5 star ' + fac + '\n* 6 x 5 star ' + hero + '\n* 212 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E5
+                if stars_end == 'E5':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (27, 7, 276)
+                    message_food = ('* 9 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 3 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 27 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 276 x 5 star (any faction)\n***TOTAL***')
+            
+            #starting at 7 stars
+            elif stars_start == '7':
+                if (hero in hero_9_stars) and (hero not in hero_10_stars):
+                    message_warning = "You can build this hero only up to 9 stars."
+                    if stars_end in ("10", "E1", "E2", "E3", "E4", "E5"):
+                        message_food = ""
+                        fodder_needs = ""
+                        message_build = ""
+                        message_food_total = ""
+                else:
+                    message_warning = "You can build this hero up to E5."
+                message_build = "To build a " + stars_end + " star " + hero + " from " + stars_start + " star shards, you need:"
+
+                #Up to 8 stars
+                if stars_end == '8':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (9, 0, 0)
+                    message_food = ('* 3 x 5 star ' + fac + '\n* 1 x 6 star ' + fac)
+                    message_food_total = ('***TOTAL***\n* 9 x 5 star ' + fac + '\n***TOTAL***')
+
+                #Up to 9 stars
+                if stars_end == '9':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (17, 1, 0)
+                    message_food = ('* 5 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 2 x 6 star ' + fac)
+                    message_food_total = ('***TOTAL***\n* 17 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n***TOTAL***')
+
+                #Up to 10 stars
+                if stars_end == '10':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (23, 3, 28)
+                    message_food = ('* 5 x 5 star ' + fac + '\n* 3 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 1 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 23 x 5 star ' + fac + '\n* 3 x 5 star ' + hero + '\n* 28 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E1
+                if stars_end == 'E1':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (23, 4, 56)
+                    message_food = ('* 5 x 5 star ' + fac + '\n* 4 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 2 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 23 x 5 star ' + fac + '\n* 4 x 5 star ' + hero + '\n* 56 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E2
+                if stars_end == 'E2':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (23, 5, 84)
+                    message_food = ('* 5 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 23 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 84 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E3
+                if stars_end == 'E3':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (23, 5, 148)
+                    message_food = ('* 5 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)' + '\n* 1 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 23 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 148 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E4
+                if stars_end == 'E4':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (23, 6, 212)
+                    message_food = ('* 5 x 5 star ' + fac + '\n* 6 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)' + '\n* 2 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 23 x 5 star ' + fac + '\n* 6 x 5 star ' + hero + '\n* 212 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E5
+                if stars_end == 'E5':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (23, 7, 276)
+                    message_food = ('* 5 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 3 x 6 star ' + fac + '\n* 3 x 9 star (any faction)' + '\n* 3 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 23 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 276 x 5 star (any faction)\n***TOTAL***')
+
+            #starting at 8 stars
+            elif stars_start == '8':
+                if (hero in hero_9_stars) and (hero not in hero_10_stars):
+                    message_warning = "You can build this hero only up to 9 stars."
+                    if stars_end in ("10", "E1", "E2", "E3", "E4", "E5"):
+                        message_food = ""
+                        fodder_needs = ""
+                        message_build = ""
+                        message_food_total = ""
+                else:
+                    message_warning = "You can build this hero up to E5."
+                message_build = "To build a " + stars_end + " star " + hero + " from " + stars_start + " star shards, you need:"
+
+                #Up to 9 stars
+                if stars_end == '9':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (8, 1, 0)
+                    message_food = ('* 2 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n* 1 x 6 star ' + fac)
+                    message_food_total = ('***TOTAL\n* 8 x 5 star ' + fac + '\n* 1 x 5 star ' + hero + '\n***TOTAL***')
+
+                #Up to 10 stars
+                if stars_end == '10':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (14, 3, 28)
+                    message_food = ('* 2 x 5 star ' + fac + '\n* 3 x 5 star ' + hero + '\n* 2 x 6 star ' + fac + '\n* 1 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 14 x 5 star ' + fac + '\n* 3 x 5 star ' + hero + '\n* 28 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E1
+                if stars_end == 'E1':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (14, 4, 56)
+                    message_food = ('* 2 x 5 star ' + fac + '\n* 4 x 5 star ' + hero + '\n* 2 x 6 star ' + fac + '\n* 2 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 14 x 5 star ' + fac + '\n* 4 x 5 star ' + hero + '\n* 56 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E2
+                if stars_end == 'E2':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (14, 5, 84)
+                    message_food = ('* 2 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 2 x 6 star ' + fac + '\n* 3 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 14 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 84 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E3
+                if stars_end == 'E3':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (14, 5, 148)
+                    message_food = ('* 2 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 2 x 6 star ' + fac + '\n* 3 x 9 star (any faction)' + '\n* 1 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 14 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 148 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E4
+                if stars_end == 'E4':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (14, 6, 212)
+                    message_food = ('* 2 x 5 star ' + fac + '\n* 6 x 5 star ' + hero + '\n* 2 x 6 star ' + fac + '\n* 3 x 9 star (any faction)' + '\n* 2 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 14 x 5 star ' + fac + '\n* 6 x 5 star ' + hero + '\n* 212 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E5
+                if stars_end == 'E5':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (14, 7, 276)
+                    message_food = ('* 2 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 2 x 6 star ' + fac + '\n* 3 x 9 star (any faction)' + '\n* 3 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL***\n* 14 x 5 star ' + fac + '\n* 7 x 5 star ' + hero + '\n* 276 x 5 star (any faction)\n***TOTAL***')
+             
+            #starting at 9 stars
+            elif stars_start == '9':
+                if (hero in hero_9_stars) and (hero not in hero_10_stars):
+                    message_warning = "You can build this hero only up to 9 stars."
+                    if stars_end in ("10", "E1", "E2", "E3", "E4", "E5"):
+                        message_food = ""
+                        fodder_needs = ""
+                        message_build = ""
+                        message_food_total = ""
+                else:
+                    message_warning = "You can build this hero up to E5."
+                message_build = "To build a " + stars_end + " star " + hero + " from " + stars_start + " star shards, you need:"
+
+                #Up to 10 stars
+                if stars_end == '10':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (6, 2, 28)
+                    message_food = ('* 2 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 1 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 6 x 5 star ' + fac + '\n* 2 x 5 star ' + hero + '\n* 28 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E1
+                if stars_end == 'E1':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (6, 3, 56)
+                    message_food = ('* 3 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 2 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 6 x 5 star ' + fac + '\n* 3 x 5 star ' + hero + '\n* 56 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E2
+                if stars_end == 'E2':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (6, 4, 84)
+                    message_food = ('* 4 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 3 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 6 x 5 star ' + fac + '\n* 4 x 5 star ' + hero + '\n* 84 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E3
+                if stars_end == 'E3':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (6, 4, 148)
+                    message_food = ('* 4 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 1 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 6 x 5 star ' + fac + '\n* 4 x 5 star ' + hero + '\n* 148 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E4
+                if stars_end == 'E4':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (6, 5, 212)
+                    message_food = ('* 5 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 2 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 6 x 5 star ' + fac + '\n* 5 x 5 star ' + hero + '\n* 212 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E5
+                if stars_end == 'E5':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (6, 6, 276)
+                    message_food = ('* 6 x 5 star ' + hero + '\n* 1 x 6 star ' + fac + '\n* 3 x 9 star (any faction)\n* 3 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 6 x 5 star ' + fac + '\n* 6 x 5 star ' + hero + '\n* 276 x 5 star (any faction)\n***TOTAL***')
+
+            #starting at 10 stars
+            elif stars_start == '10':
+                if (hero in hero_9_stars) and (hero not in hero_10_stars):
+                    message_warning = "You can build this hero only up to 9 stars."
+                    if stars_end in ("10", "E1", "E2", "E3", "E4", "E5"):
+                        message_food = ""
+                        fodder_needs = ""
+                        message_build = ""
+                        message_food_total = ""
+                else:
+                    message_warning = "You can build this hero up to E5."
+                message_build = "To build a " + stars_end + " star " + hero + " from " + stars_start + " star shards, you need:"
+
+                #Up to E1
+                if stars_end == 'E1':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 1, 28)
+                    message_food = ('* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 1 x 5 star ' + hero + '\n* 28 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E2
+                if stars_end == 'E2':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 2, 56)
+                    message_food = ('* 2 x 5 star ' + hero + '\n* 2 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 2 x 5 star ' + hero + '\n* 56 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E3
+                if stars_end == 'E3':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 2, 120)
+                    message_food = ('* 2 x 5 star ' + hero + '\n* 2 x 9 star (any faction)\n* 1 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 2 x 5 star ' + hero + '\n* 120 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E4
+                if stars_end == 'E4':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 3, 184)
+                    message_food = ('* 3 x 5 star ' + hero + '\n* 2 x 9 star (any faction)\n* 2 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 3 x 5 star ' + hero + '\n* 184 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E5
+                if stars_end == 'E5':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 4, 248)
+                    message_food = ('* 4 x 5 star ' + hero + '\n* 2 x 9 star (any faction)\n* 3 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 4 x 5 star ' + hero + '\n* 248 x 5 star (any faction)\n***TOTAL***')
+
+            #starting at E1
+            elif stars_start == 'E1':
+                if (hero in hero_9_stars) and (hero not in hero_10_stars):
+                    message_warning = "You can build this hero only up to 9 stars."
+                    if stars_end in ("10", "E1", "E2", "E3", "E4", "E5"):
+                        message_food = ""
+                        fodder_needs = ""
+                        message_build = ""
+                        message_food_total = ""
+                else:
+                    message_warning = "You can build this hero up to E5."
+                message_build = "To build a " + stars_end + " star " + hero + " from " + stars_start + " star shards, you need:"
+
+                #Up to E2
+                if stars_end == 'E2':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 1, 28)
+                    message_food = ('* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 1 x 5 star ' + hero + '\n* 28 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E3
+                if stars_end == 'E3':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 1, 92)
+                    message_food = ('* 1 x 5 star ' + hero + '\n* 1 x 9 star (any faction)\n* 1 x 10 star (any function)')
+                    message_food_total = ('***TOTAL\n* 1 x 5 star ' + hero + '\n* 92 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E4
+                if stars_end == 'E4':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 2, 156)
+                    message_food = ('* 2 x 5 star ' + hero + '\n* 1 x 9 star (any faction)\n* 2 x 10 star (any function)')
+                    message_food_total = ('***TOTAL\n* 2 x 5 star ' + hero + '\n* 156 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E5
+                if stars_end == 'E5':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 3, 220)
+                    message_food = ('* 3 x 5 star ' + hero + '\n* 1 x 9 star (any faction)\n* 3 x 10 star (any function)')
+                    message_food_total = ('***TOTAL\n* 3 x 5 star ' + hero + '\n* 220 x 5 star (any faction)\n***TOTAL***')
+
+            #starting at E2
+            elif stars_start == 'E2':
+                if (hero in hero_9_stars) and (hero not in hero_10_stars):
+                    message_warning = "You can build this hero only up to 9 stars."
+                    if stars_end in ("10", "E1", "E2", "E3", "E4", "E5"):
+                        message_food = ""
+                        fodder_needs = ""
+                        message_build = ""
+                        message_food_total = ""
+                else:
+                    message_warning = "You can build this hero up to E5."
+                message_build = "To build a " + stars_end + " star " + hero + " from " + stars_start + " star shards, you need:"
+
+                #Up to E3
+                if stars_end == 'E3':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 0, 64)
+                    message_food = ('* 1 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 64 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E4
+                if stars_end == 'E4':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 1, 128)
+                    message_food = ('* 1 x 5 star ' + hero + '\n* 2 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 1 x 5 star ' + hero + '\n* 128 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E5
+                if stars_end == 'E5':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 2, 192)
+                    message_food = ('* 2 x 5 star ' + hero + '\n* 3 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 2 x 5 star ' + hero + '\n* 192 x 5 star (any faction)\n***TOTAL***')
+
+            #starting at E3
+            elif stars_start == 'E3':
+                if (hero in hero_9_stars) and (hero not in hero_10_stars):
+                    message_warning = "You can build this hero only up to 9 stars."
+                    if stars_end in ("10", "E1", "E2", "E3", "E4", "E5"):
+                        message_food = ""
+                        fodder_needs = ""
+                        message_build = ""
+                        message_food_total = ""
+                else:
+                    message_warning = "You can build this hero up to E5."
+                message_build = "To build a " + stars_end + " star " + hero + " from " + stars_start + " star shards, you need:"  
+
+                #Up to E4
+                if stars_end == 'E4':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0, 1, 64)
+                    message_food = ('* 1 x 5 star ' + hero + '\n* 1 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 1 x 5 star ' + hero + '\n* 64 x 5 star (any faction)\n***TOTAL***')
+
+                #Up to E5
+                if stars_end == 'E5':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0 ,1 ,128)
+                    message_food = ('* 2 x 5 star ' + hero + '\n* 2 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 2 x 5 star ' + hero + '\n* 128 x 5 star (any faction)\n***TOTAL***')
+
+            #starting at E4
+            elif stars_start == 'E4':
+                if (hero in hero_9_stars) and (hero not in hero_10_stars):
+                    message_warning = "You can build this hero only up to 9 stars."
+                    if stars_end in ("10", "E1", "E2", "E3", "E4", "E5"):
+                        message_food = ""
+                        fodder_needs = ""
+                        message_build = ""
+                        message_food_total = ""
+                else:
+                    message_warning = "You can build this hero up to E5."
+                message_build = "To build a " + stars_end + " star " + hero + " from " + stars_start + " star shards, you need:"  
+
+                #Up to E5
+                if stars_end == 'E5':
+                    #Define hero faction
+                    fac = find_faction(hero)
+                    fodder_needs = (0 ,1 ,64)
+                    message_food = ('* 1 x 5 star ' + hero + '\n* 1 x 10 star (any faction)')
+                    message_food_total = ('***TOTAL\n* 1 x 5 star ' + hero + '\n* 64 x 5 star (any faction)\n***TOTAL***')
 
               
-
-                
         if len(message_food) != 0:
             message_food = message_food.split("\n")
         
